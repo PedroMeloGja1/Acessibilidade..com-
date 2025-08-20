@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acessibilidade.com</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Bem-vindo ao Acessibilidade.com</h1>
+  </header>
+
+  <main class="content">
+    <p>Teste o botão de acessibilidade. Passe o mouse para abrir as opções (ou clique no mobile).</p>
+    <p><strong>Dica:</strong> a posição do botão é controlada no <code>style.css</code> pelas classes
+      <code>.bottom-right</code>, <code>.bottom-left</code>, <code>.top-right</code> e <code>.top-left</code>.</p>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Acessibilidade.com</p>
+  </footer>
+
+  <!-- Container do botão + painel -->
+  <div class="accessibility bottom-right" id="accessibility" aria-live="polite">
+    <button id="accessBtn"
+            class="accessibility-button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="accessPanel"
+            title="Acessibilidade">
+      ♿
+      <span class="sr-only">Abrir opções de acessibilidade</span>
+    </button>
+
+    <div id="accessPanel" class="accessibility-options" role="menu" hidden>
+      <button class="option" data-action="toggle-contrast" role="menuitem">Alternar Alto Contraste</button>
+      <button class="option" data-action="increase-font" role="menuitem">Aumentar Fonte</button>
+      <button class="option" data-action="decrease-font" role="menuitem">Diminuir Fonte</button>
+      <button class="option" data-action="reset" role="menuitem">Redefinir</button>
+    </div>
+  </div>
+</body>
+</html>
